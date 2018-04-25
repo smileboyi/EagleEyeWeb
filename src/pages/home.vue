@@ -1,7 +1,70 @@
 <template>
   <div>
-
-
+    <div class="introduce pre">
+      <div class="left pre">
+        <img class="line wh100" src="../assets/img/line.png" alt="">
+        <a class="btn" href="javascript:;">雀鹰</a>
+        <a class="btn" href="javascript:;">赤腹鹰</a>
+        <a class="btn" href="javascript:;">苍鹰</a>
+        <a class="btn" href="javascript:;"></a>
+        
+        <div class="pab main">
+          <img class="circular" src="../assets/img/circular.png" alt="">
+        </div>
+      </div>
+      <div class="right dn">
+        <div class="item sn1">
+          <h4 class="title">即时消息处理</h4>
+          <p class="text">
+            可通过内置的便捷线上沟通工具进行即时消息回复，进行有效的沟通。消息发出“已读或未读”一目了然。
+            “业务往来”和“工作往来”的集成展示在沟通中也能随时掌握信息、处理待办事项。
+          </p>
+          <div class="phrases">
+            <p class="phrase sn1">企业组织架构生成通讯录，快速查找联系人</p>
+            <p class="phrase sn2">“已读或未读”一目了然，消息100%传达</p>
+            <p class="phrase sn3">一键分享，审批流程轻松查看，加快审批进度</p>
+          </div>
+        </div>
+        <div class="item sn2">
+          <h4 class="title">以管理层为中心</h4>
+          <p class="text">
+            支持不同权限的各类型用户是智慧办公的特点。与传统割裂平台不同，系统提供统一的支撑界面，登录同一平台，按职级提供不同功能。
+            并提供该角色归属的所有企业运营信息、事务、提醒信息，方便老板们快速进行处理。
+          </p>
+          <div class="phrases">
+            <p class="phrase sn1">企业核心数据一键生成</p>
+            <p class="phrase sn2">透视全公司各层级</p>
+            <p class="phrase sn3">人才鉴别与培养</p>
+          </div>
+        </div>
+        <div class="item sn3">
+          <h4 class="title">轻量化前端渠道</h4>
+          <p class="text">
+            对各渠道独立的多个运营管理功能及界面进行横向整合，形成统一的运营管理工作台。
+            运营人员可在该平台上对内容、系统参数等信息进行统一配置管理或按流程开展日常运营操作，提升运营效率。
+          </p>
+          <div class="phrases">
+            <p class="phrase sn1">支持移动建模，满足企业个性化的移动应用</p>
+            <p class="phrase sn2">APP手机端,web移动端,Pad移动端,微信集成，多端同步</p>
+            <p class="phrase sn3">统一运营管理工作台，同步内容、系统参数等信息</p>
+          </div>
+        </div>
+        <div class="item sn4">
+          <h4 class="title">大数据分析</h4>
+          <p class="text">
+            既能实现OA系统内部各模块间的数据整合，如借款与报销、预算与
+            决算等，也能实现OA系统与其他业务系统间的数据整合，如ERP、
+            CRM、HR、档案系统、财务系统等，帮助企业消除信息孤岛，实现
+            数据的互享互通。
+          </p>
+          <div class="phrases">
+            <p class="phrase sn1">灵便的实现数据整合和数据统计，消除信息孤岛</p>
+            <p class="phrase sn2">OA系统内部工作流之间的数据整合</p>
+            <p class="phrase sn3">实现OA系统工作流与其他业务系统之间的数据整合</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="application pre dn">
       <h4 class="title tc dib wauto2 pab">多款协同应用供您选择</h4>
@@ -56,7 +119,7 @@
         </div>
       </div>
     </div>
-    <div class="quota pre">
+    <div class="quota pre dn">
       <h4 class="title tc dib wauto2 pab">优纳科技帮助企业实现信息化管理</h4>
       <p class="text pab wauto2">大数据助力，实现高价值管理</p>
       <div class="show tc pre">
