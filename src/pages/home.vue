@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="introduce pre">
+    <div class="introduce pre dn">
       <div class="left pre">
         <img class="line wh100" src="../assets/img/line.png" alt="">
         <a class="btn" href="javascript:;">雀鹰</a>
@@ -66,7 +66,7 @@
       </div>
     </div>
 
-    <div class="application pre dn">
+    <div class="application pre ">
       <h4 class="title tc dib wauto2 pab">多款协同应用供您选择</h4>
       <p class="text pab wauto2">不同类型的企业可以选择自己需要的办公应用，拒绝功能堆砌、资源闲置</p>
       <img class="pic pab nob wauto2" src="../assets/img/machine-hand.png" alt="">
