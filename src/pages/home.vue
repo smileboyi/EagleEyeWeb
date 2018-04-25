@@ -1,14 +1,126 @@
 <template>
   <div>
+
+
+
+    <div class="application pre dn">
+      <h4 class="title tc dib wauto2 pab">多款协同应用供您选择</h4>
+      <p class="text pab wauto2">不同类型的企业可以选择自己需要的办公应用，拒绝功能堆砌、资源闲置</p>
+      <img class="pic pab nob wauto2" src="../assets/img/machine-hand.png" alt="">
+      <div class="icons flex sn1 pab">
+        <div class="one grail">
+            <i class="icon sn1">新闻<br>管理</i>
+            <i class="icon sn2">待办<br>事宜</i>
+            <i class="icon sn3">流程<br>管理</i>
+            <i class="icon sn4">日历<br>管理</i>
+            <i class="icon sn5">任务<br>管理</i>
+        </div>
+        <div class="two grail">
+            <i class="icon sn1">通讯<br>录</i>
+            <i class="icon sn2">邮件<br>管理</i>
+            <i class="icon sn3">公文<br>管理</i>
+            <i class="icon sn4">scm<br>流程</i>
+        </div>
+        <div class="three grail">
+            <i class="icon sn1">会议<br>管理</i>
+            <i class="icon sn2">合同<br>审批</i>
+            <i class="icon sn3">工作<br>沟通</i>
+        </div>
+        <div class="four grail">
+            <i class="icon sn1">论坛<br>管理</i>
+            <i class="icon sn2">考勤<br>管理</i>
+        </div>
+      </div>
+      <div class="icons flex sn2 pab">
+        <div class="one grail">
+            <i class="icon sn1">知识<br>仓库</i>
+            <i class="icon sn2">工作<br>记录</i>
+            <i class="icon sn3">知识<br>问答</i>
+            <i class="icon sn4">专家<br>网络</i>
+            <i class="icon sn5">爱关怀</i>
+        </div>
+        <div class="two grail">
+            <i class="icon sn1">项目<br>查看</i>
+            <i class="icon sn2">测评</i>
+            <i class="icon sn3">收款<br>查看</i>
+            <i class="icon sn4">我的<br>业绩</i>
+        </div>
+        <div class="three grail">
+            <i class="icon sn1">我的<br>客户</i>
+            <i class="icon sn2">合同<br>审批</i>
+            <i class="icon sn3">客户<br>需求</i>
+        </div>
+        <div class="four grail">
+            <i class="icon sn1">消息<br>管理</i>
+            <i class="icon sn2">工作<br>总结</i>
+        </div>
+      </div>
+    </div>
+    <div class="quota pre">
+      <h4 class="title tc dib wauto2 pab">优纳科技帮助企业实现信息化管理</h4>
+      <p class="text pab wauto2">大数据助力，实现高价值管理</p>
+      <div class="show tc pre">
+        <div class="item">
+          <div class="data dib">
+            <div class="symbol1">-</div>
+            <div class="num">70</div>
+            <div class="symbol2">
+              <b class="arrow-down dib"></b>
+              <b class="percentage">%</b>
+            </div>
+          </div>
+          <p class="title2">企业IT成本费用</p>
+          <p class="text2">按需定制高效协同<br>企业级业务保障<br>高可靠、高安全</p>
+        </div>
+        <div class="item">
+          <div class="data dib">
+            <div class="symbol1">-</div>
+            <div class="num">30</div>
+            <div class="symbol2">
+              <b class="arrow-down dib"></b>
+              <b class="percentage">%</b>
+            </div>
+          </div>
+          <p class="title2">每年节省运营成本</p>
+          <p class="text2">从人力、财务、办公耗材成本等<br>各个维度上都在帮助企业<br>重新量化目标</p>
+        </div>
+
+        <div class="item">
+          <div class="data dib">
+            <div class="symbol1">+</div>
+            <div class="num">300</div>
+            <div class="symbol2">
+              <b class="arrow-up dib"></b>
+              <b class="percentage">%</b>
+            </div>
+          </div>
+          <p class="title2">单位时间内审批效率</p>
+          <p class="text2">智能化网络办公和移动办公<br>全面提升业务审批效率<br>&nbsp;</p>
+        </div>
+
+        <div class="item">
+          <div class="data dib">
+            <div class="symbol1">-</div>
+            <div class="num">50</div>
+            <div class="symbol2">
+              <b class="arrow-down dib"></b>
+              <b class="percentage">%</b>
+            </div>
+          </div>
+          <p class="title2">财务工作出错率</p>
+          <p class="text2">高效集成多部门数据共享<br>精准审批财务流程<br>&nbsp;</p>
+        </div>
+      </div>
+    </div>
     <div class="process pre dn">
       <h4 class="title tc dib wauto2 pab">定制服务流程</h4>
       <p class="text pab wauto2">优纳科技提供产品设计、定制开发、整体方案设计与规划三大类服务，优质的业务流程</p>
       <img class="pic wauto2 pab" src="../assets/img/service-flow.png" alt="">
     </div>
-    <div class="standard pre">
+    <div class="standard pre dn">
       <h4 class="title tc dib wauto2 pab">服务标准</h4>
       <p class="text pab wauto2">根据各类业务，优纳科技提供标准化的工作流程，有效机制保障项目整体质量</p>
-      <div class="cards flex">
+      <div class="cards pre tc">
         <div class="card">
           <img class="pic" src="../assets/img/standard1.png" alt="">
           <i class="shadow"></i>
@@ -31,7 +143,7 @@
           <img class="pic" src="../assets/img/standard4.png" alt="">
           <i class="shadow"></i>
           <p class="title">服务贴心</p>
-          <p class="words">深入贯彻全民客服的理念<br>360度跟进你的需求</p>
+          <p class="words">深入贯彻全民客服的理念<br>360度跟进你的需求<br>&nbsp;</p>
         </div>
       </div>
     </div>
@@ -81,176 +193,10 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   
 }
 </script>
-<style lang="less" scoped>
-  .process{
-    height: 11.4035rem;
-    .title{
-      top: 1.6667rem;
-      font-size: .5263rem;
-      color: #373737;
-    }
-    .text{
-      top: 2.7193rem;
-      font-size: .2456rem;
-      color: #5d5d5d;
-    }
-    .pic{
-      top: 3.1rem;
-      width: 17.8421rem;
-      height: 6.9123rem;
-    }
-  }
-  .standard{
-    height: 11.4035rem;
-    background-color: #f3f3f6;
-    .title{
-      top: 1.6667rem;
-      font-size: .5263rem;
-      color: #373737;
-    }
-    .text{
-      top: 2.7193rem;
-      font-size: .2456rem;
-      color: #5d5d5d;
-    }
-    .cards{
-
-    }
-    .card{
-      width: 4.1228rem;
-      height: 5.3509rem;
-      margin: 3.9649rem .2281rem 0;
-      background-color: #fff;
-      text-align: center;
-      .pic{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        &:nth-of-type(1){
-          width: 1.3684rem;
-          height: 1.2105rem;
-          margin-top: .9474rem;
-        }  
-        &:nth-of-type(2){
-          width: 1.2982rem;
-          height: 1.2632rem;
-          margin-top: .8947rem;
-        }  
-        &:nth-of-type(3){
-          width: 1.2105rem;
-          height: 1.3509rem;
-          margin-top: .7895rem;
-        }  
-        &:nth-of-type(4){
-          width: 1.0702rem;
-          height: 1.2281rem;
-          margin-top: .8947rem;
-        }  
-      }
-      .title{
-        margin-bottom: .3509rem;
-        font-size: .3509rem;
-        color: #5d5d5d;
-      }
-      .words{
-        line-height: .386rem;
-        font-size: .2456rem;
-        color: #5d5d5d;
-      }
-    }
-  }
-
-
-  .levelopment{
-    height: 11.5789rem;
-    background-image: url(../assets/img/eagle.jpg);
-    background-size: cover;
-    .title{
-      top: 1.6667rem;
-      font-size: .5263rem;
-      font-weight: 500;
-      color: #fff;
-    }
-    .pic{
-      top: 3.1053rem;
-      width: 21.1579rem;
-      height: 6.7018rem;
-    }
-  }
-  .enterprise{
-    height: 11.6842rem;
-    background-color: #fff;
-    .title{
-      top: 1.6667rem;
-      font-size: .5263rem;
-      font-weight: 500;
-      color: #373737;
-    }
-    .pic{
-      top: 3.2105rem;
-      width: 21.2281rem;
-      height: 6.3158rem;
-    }
-  }
-  .pagebottm{
-    height: 6.4912rem;
-    background-color: #201f2a;
-    .pic{
-      width: 21.0526rem;
-      top: 1.0526rem;
-      .logo{
-        width: 3.6491rem;
-        height: .6316rem;
-      }
-    }
-    .main{
-      top: 1.5754rem;
-      width: 21.0526rem;
-      .bottom{
-        margin-top: .8772rem;
-      }
-      .words{
-        display: flex;
-        // display: -webkit-box;
-        max-width: 55%;
-        line-height: .386rem;
-        font-size: .2105rem;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-        color: #929292;
-      }
-      .links{
-        width: 37.0833%;
-      }
-      .link{
-        width: 33.33%;
-        padding-bottom: .3509rem;
-        font-size: .2456rem;
-        text-align: right;
-        color: #f9f9f9;
-      }
-      .contact{
-        line-height: 1;
-        color: #929292;
-        .tel{
-          font-size: .4912rem;
-        }
-        .email{
-          margin-top: 8px;
-          font-size: .2456rem;
-        }
-      }
-      .info{
-        font-size: .2456rem;
-        text-align: right;
-        color: #929292;
-      }
-    }
-  }
-</style>
+<style src="../assets/css/home.less" lang="less" scoped />

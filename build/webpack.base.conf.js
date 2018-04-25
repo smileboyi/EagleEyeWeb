@@ -74,6 +74,9 @@ module.exports = {
       },  
       {  //新增
         test: /\.less$/,
+        include: [  
+          '/src/assets/css', 
+        ],  
         use: [
           'style-loader',
           { loader: 'css-loader', options: { importLoaders: 1 } },

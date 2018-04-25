@@ -35,7 +35,7 @@ body{-webkit-overfloscrolling: touch;line-height: 1.6;font-family: -apple-system
 
 /* 字根屏幕适配，移动端可以换成flexible.js */
 /* 这里设定限制最大了，如果觉得小了可以去掉往上继续添加 */
-@media (max-width: 2100px) {html {font-size: 60px;}}
+@media (max-width: 2000px) {html {font-size: 60px;}}
 @media (max-width: 1900px) {html {font-size: 57px;}}
 @media (max-width: 1800px) {html {font-size: 54px;}}
 @media (max-width: 1700px) {html {font-size: 51px;}}
