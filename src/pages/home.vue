@@ -5,12 +5,12 @@
         <img class="logo fl" src="../assets/img/logo.png" alt="logo">
         <div class="main h100 fr">
           <a class="link ac" href="javascript:;">首页</a>
-          <a class="link" href="javascript:;">解决方案</a>
-          <a class="link" href="javascript:;">定制服务</a>
-          <a class="link" href="javascript:;">服务标准</a>
-          <a class="link" href="javascript:;">发展历程</a>
-          <a class="link" href="javascript:;">合作企业</a>
-          <a class="link" href="javascript:;">公司介绍</a>
+          <a class="link" href="#solveplan">解决方案</a>
+          <a class="link" href="#service">定制服务</a>
+          <a class="link" href="#standard">服务标准</a>
+          <a class="link" href="#levelopment">发展历程</a>
+          <a class="link" href="#enterprise">合作企业</a>
+          <a class="link" href="#pagebottm">公司介绍</a>
         </div>
       </div>
     </div>
@@ -38,12 +38,7 @@
     <contact-frame />
 
 
-
-
-
-
-
-    <div class="introduce pre">
+    <div class="introduce pre" id="solveplan">
       <div class="left pre">
         <img class="line wh100" src="../assets/img/line.png" alt="">
         <a class="btn ac" href="javascript:;">巨鹰</a>
@@ -113,7 +108,7 @@
       </div>
     </div>
 
-    <div class="application pre">
+    <div class="application pre" id="service">
       <h4 class="title tc dib wauto2 pab">多款协同应用供您选择</h4>
       <p class="text pab wauto2">不同类型的企业可以选择自己需要的办公应用，拒绝功能堆砌、资源闲置</p>
       <img class="pic pab nob wauto2" src="../assets/img/machine-hand.png" alt="">
@@ -227,7 +222,7 @@
       <p class="text pab wauto2">优纳科技提供产品设计、定制开发、整体方案设计与规划三大类服务，优质的业务流程</p>
       <img class="pic wauto2 pab" src="../assets/img/service-flow.png" alt="">
     </div>
-    <div class="standard pre">
+    <div class="standard pre" id="standard">
       <h4 class="title tc dib wauto2 pab">服务标准</h4>
       <p class="text pab wauto2">根据各类业务，优纳科技提供标准化的工作流程，有效机制保障项目整体质量</p>
       <div class="cards pre tc">
@@ -258,15 +253,15 @@
       </div>
     </div>
 
-    <div class="levelopment pre">
+    <div class="levelopment pre" id="levelopment">
       <h4 class="title tc dib wauto2 pab">发展历程</h4>
       <img class="pic wauto2 pab" src="../assets/img/development-history.png" alt="">
     </div>
-    <div class="enterprise pre">
+    <div class="enterprise pre" id="enterprise">
       <h4 class="title tc dib wauto2 pab">创业路上，相伴企业成长</h4>
       <img class="pic wauto2 pab" src="../assets/img/brand-show.png" alt="">
     </div>
-    <div class="pagebottm pre">
+    <div class="pagebottm pre" id="pagebottm">
       <div class="pic pre wauto fix">
         <img class="logo fl" src="../assets/img/logo.png" alt="logo">
       </div>
@@ -310,7 +305,6 @@ import 'swiper/dist/css/swiper.css'
 import ContactFrame from '@/components/ContactFrame'
 
 
-
 export default {
   name: 'home',
   data() {
@@ -324,6 +318,14 @@ export default {
         }
       }
     }
+  },
+  created() { 
+    this.$nextTick(() => {
+      window.addEventListener('scroll', () => {
+        let scrollTop = document.documentElement.scrollTop;
+        console.log(scrollTop);
+      }, false)
+    }) 
   },
   components:{
     swiper,
