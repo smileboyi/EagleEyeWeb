@@ -17,25 +17,33 @@
 
     <swiper class="swiper" :options="swiperOption" ref="mySwiper">
       <swiper-slide class="slide">
-        <div class="icon wh100 bg" style="background-image:url(./static/img/swiper-pic.jpg)">
-          <img class="title" src="./static/swiper-text.png" alt="">
+        <div class="icon wh100 pre" style="background-image:url(./static/img/swiper-pic.jpg)">
+          <div class="title icon centre1" style="background-image:url(./static/img/swiper-text.png)"></div>
         </div>
       </swiper-slide>
       <swiper-slide class="slide">
-        <div class="icon wh100 bg" style="background-image:url(./static/img/swiper-pic.jpg)">
-          <img class="title" src="./static/swiper-text.png" alt="">
+        <div class="icon wh100 pre" style="background-image:url(./static/img/swiper-pic.jpg)">
+          <div class="title icon centre1" style="background-image:url(./static/img/swiper-text.png)"></div>
         </div>
       </swiper-slide>
-      <swiper-slide >
-        <div class="icon wh100 bg" style="background-image:url(./static/img/swiper-pic.jpg)">
-          <img class="title" src="./static/swiper-text.png" alt="">
+      <swiper-slide class="slide">
+        <div class="icon wh100 pre" style="background-image:url(./static/img/swiper-pic.jpg)">
+          <div class="title icon centre1" style="background-image:url(./static/img/swiper-text.png)"></div>
         </div>
       </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination"></div>
+      <div class="swiper-pagination w100" slot="pagination"></div>
     </swiper>
 
 
-    <div class="introduce pre ">
+    <contact-frame />
+
+
+
+
+
+
+
+    <div class="introduce pre">
       <div class="left pre">
         <img class="line wh100" src="../assets/img/line.png" alt="">
         <a class="btn ac" href="javascript:;">巨鹰</a>
@@ -297,19 +305,51 @@
 </template>
 
 <script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+import ContactFrame from '@/components/ContactFrame'
+
 
 
 export default {
- name: 'home',
- data() {
-   return {
-     swiperOption: {
-       notNextTick: true,
-       autoplay: 3000,
-     }
-   }
- },
+  name: 'home',
+  data() {
+    return {
+      swiperOption: {
+        notNextTick: true,
+        autoplay: 3000,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination'
+        }
+      }
+    }
+  },
+  components:{
+    swiper,
+    swiperSlide,
+    ContactFrame
+  }
 
 }
 </script>
 <style src="../assets/css/home.less" lang="less" scoped />
+<style>
+.swiper-pagination{
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+.swiper-pagination-bullet {
+  background-color: #ccc !important;
+}
+.swiper-pagination-bullet-active {
+  width: 25px;
+  border-radius: 3px !important;
+  background-color: #c9cbd2 !important;
+  -webkit-transition: width 0.3s;	
+  transition: width 0.3s;
+}
+
+</style>
+
