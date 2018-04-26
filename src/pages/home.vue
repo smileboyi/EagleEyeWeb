@@ -1,55 +1,58 @@
 <template>
   <div>
-    <div class="introduce pre dn">
-      <div class="left pre">
-        <img class="line wh100" src="../assets/img/line.png" alt="">
-        <a class="btn" href="javascript:;">雀鹰</a>
-        <a class="btn" href="javascript:;">赤腹鹰</a>
-        <a class="btn" href="javascript:;">苍鹰</a>
-        <a class="btn" href="javascript:;"></a>
-        
-        <div class="pab main">
-          <img class="circular" src="../assets/img/circular.png" alt="">
+    <div class="pagetop">
+      <div class="box wauto">
+        <img class="logo fl" src="../assets/img/logo.png" alt="logo">
+        <div class="main h100 fr">
+          <a class="link ac" href="javascript:;">首页</a>
+          <a class="link" href="javascript:;">解决方案</a>
+          <a class="link" href="javascript:;">定制服务</a>
+          <a class="link" href="javascript:;">服务标准</a>
+          <a class="link" href="javascript:;">发展历程</a>
+          <a class="link" href="javascript:;">合作企业</a>
+          <a class="link" href="javascript:;">公司介绍</a>
         </div>
       </div>
-      <div class="right dn">
-        <div class="item sn1">
-          <h4 class="title">即时消息处理</h4>
-          <p class="text">
-            可通过内置的便捷线上沟通工具进行即时消息回复，进行有效的沟通。消息发出“已读或未读”一目了然。
-            “业务往来”和“工作往来”的集成展示在沟通中也能随时掌握信息、处理待办事项。
-          </p>
-          <div class="phrases">
-            <p class="phrase sn1">企业组织架构生成通讯录，快速查找联系人</p>
-            <p class="phrase sn2">“已读或未读”一目了然，消息100%传达</p>
-            <p class="phrase sn3">一键分享，审批流程轻松查看，加快审批进度</p>
+    </div>
+
+    <swiper class="swiper" :options="swiperOption" ref="mySwiper">
+      <swiper-slide class="slide">
+        <div class="icon wh100 bg" style="background-image:url(./static/img/swiper-pic.jpg)">
+          <img class="title" src="./static/swiper-text.png" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide class="slide">
+        <div class="icon wh100 bg" style="background-image:url(./static/img/swiper-pic.jpg)">
+          <img class="title" src="./static/swiper-text.png" alt="">
+        </div>
+      </swiper-slide>
+      <swiper-slide >
+        <div class="icon wh100 bg" style="background-image:url(./static/img/swiper-pic.jpg)">
+          <img class="title" src="./static/swiper-text.png" alt="">
+        </div>
+      </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
+
+
+    <div class="introduce pre ">
+      <div class="left pre">
+        <img class="line wh100" src="../assets/img/line.png" alt="">
+        <a class="btn ac" href="javascript:;">巨鹰</a>
+        <a class="btn ac" href="javascript:;">赤腹鹰</a>
+        <a class="btn ac" href="javascript:;">苍鹰</a>
+        <a class="btn ac" href="javascript:;">雀鹰</a>
+        <div class="pab main sn4">
+          <img class="circular" src="../assets/img/circular.png" alt="">
+          <div class="grail pab group">
+            <p class="name fe">雀鹰</p>
+            <i class="separate"></i>
+            <p class="title fe">大数据分析</p>
           </div>
         </div>
-        <div class="item sn2">
-          <h4 class="title">以管理层为中心</h4>
-          <p class="text">
-            支持不同权限的各类型用户是智慧办公的特点。与传统割裂平台不同，系统提供统一的支撑界面，登录同一平台，按职级提供不同功能。
-            并提供该角色归属的所有企业运营信息、事务、提醒信息，方便老板们快速进行处理。
-          </p>
-          <div class="phrases">
-            <p class="phrase sn1">企业核心数据一键生成</p>
-            <p class="phrase sn2">透视全公司各层级</p>
-            <p class="phrase sn3">人才鉴别与培养</p>
-          </div>
-        </div>
-        <div class="item sn3">
-          <h4 class="title">轻量化前端渠道</h4>
-          <p class="text">
-            对各渠道独立的多个运营管理功能及界面进行横向整合，形成统一的运营管理工作台。
-            运营人员可在该平台上对内容、系统参数等信息进行统一配置管理或按流程开展日常运营操作，提升运营效率。
-          </p>
-          <div class="phrases">
-            <p class="phrase sn1">支持移动建模，满足企业个性化的移动应用</p>
-            <p class="phrase sn2">APP手机端,web移动端,Pad移动端,微信集成，多端同步</p>
-            <p class="phrase sn3">统一运营管理工作台，同步内容、系统参数等信息</p>
-          </div>
-        </div>
-        <div class="item sn4">
+      </div>
+      <div class="right pab">
+        <div class="item sn1 dn">
           <h4 class="title">大数据分析</h4>
           <p class="text">
             既能实现OA系统内部各模块间的数据整合，如借款与报销、预算与
@@ -63,10 +66,46 @@
             <p class="phrase sn3">实现OA系统工作流与其他业务系统之间的数据整合</p>
           </div>
         </div>
+        <div class="item sn2 dn">
+          <h4 class="title">以管理层为中心</h4>
+          <p class="text">
+            支持不同权限的各类型用户是智慧办公的特点。与传统割裂平台不同，系统提供统一的支撑界面，登录同一平台，按职级提供不同功能。
+            并提供该角色归属的所有企业运营信息、事务、提醒信息，方便老板们快速进行处理。
+          </p>
+          <div class="phrases">
+            <p class="phrase sn1">企业核心数据一键生成</p>
+            <p class="phrase sn2">透视全公司各层级</p>
+            <p class="phrase sn3">人才鉴别与培养</p>
+          </div>
+        </div>
+        <div class="item sn3 dn">
+          <h4 class="title">轻量化前端渠道</h4>
+          <p class="text">
+            对各渠道独立的多个运营管理功能及界面进行横向整合，形成统一的运营管理工作台。
+            运营人员可在该平台上对内容、系统参数等信息进行统一配置管理或按流程开展日常运营操作，提升运营效率。
+          </p>
+          <div class="phrases">
+            <p class="phrase sn1">支持移动建模，满足企业个性化的移动应用</p>
+            <p class="phrase sn2">APP手机端,web移动端,Pad移动端,微信集成，多端同步</p>
+            <p class="phrase sn3">统一运营管理工作台，同步内容、系统参数等信息</p>
+          </div>
+        </div>
+        <div class="item sn4">
+          <h4 class="title">即时消息处理</h4>
+          <p class="text">
+            可通过内置的便捷线上沟通工具进行即时消息回复，进行有效的沟通。消息发出“已读或未读”一目了然。
+            “业务往来”和“工作往来”的集成展示在沟通中也能随时掌握信息、处理待办事项。
+          </p>
+          <div class="phrases">
+            <p class="phrase sn1">企业组织架构生成通讯录，快速查找联系人</p>
+            <p class="phrase sn2">“已读或未读”一目了然，消息100%传达</p>
+            <p class="phrase sn3">一键分享，审批流程轻松查看，加快审批进度</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="application pre ">
+    <div class="application pre">
       <h4 class="title tc dib wauto2 pab">多款协同应用供您选择</h4>
       <p class="text pab wauto2">不同类型的企业可以选择自己需要的办公应用，拒绝功能堆砌、资源闲置</p>
       <img class="pic pab nob wauto2" src="../assets/img/machine-hand.png" alt="">
@@ -119,7 +158,7 @@
         </div>
       </div>
     </div>
-    <div class="quota pre dn">
+    <div class="quota pre">
       <h4 class="title tc dib wauto2 pab">优纳科技帮助企业实现信息化管理</h4>
       <p class="text pab wauto2">大数据助力，实现高价值管理</p>
       <div class="show tc pre">
@@ -175,12 +214,12 @@
         </div>
       </div>
     </div>
-    <div class="process pre dn">
+    <div class="process pre">
       <h4 class="title tc dib wauto2 pab">定制服务流程</h4>
       <p class="text pab wauto2">优纳科技提供产品设计、定制开发、整体方案设计与规划三大类服务，优质的业务流程</p>
       <img class="pic wauto2 pab" src="../assets/img/service-flow.png" alt="">
     </div>
-    <div class="standard pre dn">
+    <div class="standard pre">
       <h4 class="title tc dib wauto2 pab">服务标准</h4>
       <p class="text pab wauto2">根据各类业务，优纳科技提供标准化的工作流程，有效机制保障项目整体质量</p>
       <div class="cards pre tc">
@@ -211,15 +250,15 @@
       </div>
     </div>
 
-    <div class="levelopment pre dn">
+    <div class="levelopment pre">
       <h4 class="title tc dib wauto2 pab">发展历程</h4>
       <img class="pic wauto2 pab" src="../assets/img/development-history.png" alt="">
     </div>
-    <div class="enterprise dn">
+    <div class="enterprise pre">
       <h4 class="title tc dib wauto2 pab">创业路上，相伴企业成长</h4>
       <img class="pic wauto2 pab" src="../assets/img/brand-show.png" alt="">
     </div>
-    <div class="pagebottm pre dn">
+    <div class="pagebottm pre">
       <div class="pic pre wauto fix">
         <img class="logo fl" src="../assets/img/logo.png" alt="logo">
       </div>
@@ -258,8 +297,19 @@
 </template>
 
 <script>
+
+
 export default {
-  
+ name: 'home',
+ data() {
+   return {
+     swiperOption: {
+       notNextTick: true,
+       autoplay: 3000,
+     }
+   }
+ },
+
 }
 </script>
 <style src="../assets/css/home.less" lang="less" scoped />

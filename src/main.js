@@ -15,6 +15,12 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 import './assets/css/wl.base.css' 
 
 
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(swiper)
+Vue.use(swiperSlide)
+
+
 import App from './App'
 
 /* eslint-disable no-new */
