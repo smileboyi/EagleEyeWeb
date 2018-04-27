@@ -2,25 +2,24 @@
   <div>
     <!-- 联系浮动框 -->
     <contact-frame @switchPopupShow="switchOpenState" />
-    <num-animation :num=23 />
     <!-- 页面头部 -->
-    <div class="pagetop dn">
+    <div class="pagetop">
       <div class="box wauto">
         <img class="logo fl" src="../assets/img/logo.png" alt="logo">
         <div class="main h100 fr">
-          <a class="link ac" href="javascript:;">首页</a>
-          <a class="link" href="#solveplan">解决方案</a>
-          <a class="link" href="#service">定制服务</a>
-          <a class="link" href="#standard">服务标准</a>
-          <a class="link" href="#levelopment">发展历程</a>
-          <a class="link" href="#enterprise">合作企业</a>
-          <a class="link" href="#pagebottm">公司介绍</a>
+          <a class="link ac" href="#">首页</a>
+          <a class="link" href="javascript:;" @click="moveToArea('solveplan')">解决方案</a>
+          <a class="link" href="javascript:;" @click="moveToArea('service')">定制服务</a>
+          <a class="link" href="javascript:;" @click="moveToArea('standard')">服务标准</a>
+          <a class="link" href="javascript:;" @click="moveToArea('levelopment')">发展历程</a>
+          <a class="link" href="javascript:;" @click="moveToArea('enterprise')">合作企业</a>
+          <a class="link" href="javascript:;" @click="moveToArea('pagebottm')">公司介绍</a>
         </div>
       </div>
     </div>
 
     <!-- 轮播 -->
-    <swiper class="swiper dn" :options="swiperOption" ref="mySwiper">
+    <swiper class="swiper" :options="swiperOption" ref="mySwiper">
       <swiper-slide class="slide">
         <div class="icon wh100 pre" style="background-image:url(./static/img/swiper-pic.jpg)">
           <div class="title icon centre1" style="background-image:url(./static/img/swiper-text.png)"></div>
@@ -126,14 +125,14 @@
     </div>
 
     <!-- 服务指标 -->
-    <div class="quota pre">
+    <div class="quota pre" id="quota">
       <h4 class="title tc dib wauto2 pab">优纳科技帮助企业实现信息化管理</h4>
       <p class="text pab wauto2">大数据助力，实现高价值管理</p>
       <div class="show tc pre">
         <div class="item">
           <div class="data dib">
             <div class="symbol1">-</div>
-            <div class="num">70</div>
+            <num-animation :num=70 />
             <div class="symbol2">
               <b class="arrow-down dib"></b>
               <b class="percentage">%</b>
@@ -145,7 +144,7 @@
         <div class="item">
           <div class="data dib">
             <div class="symbol1">-</div>
-            <div class="num">30</div>
+            <num-animation :num=30 />
             <div class="symbol2">
               <b class="arrow-down dib"></b>
               <b class="percentage">%</b>
@@ -158,7 +157,7 @@
         <div class="item">
           <div class="data dib">
             <div class="symbol1">+</div>
-            <div class="num">300</div>
+            <num-animation :num=300 />
             <div class="symbol2">
               <b class="arrow-up dib"></b>
               <b class="percentage">%</b>
@@ -171,7 +170,7 @@
         <div class="item">
           <div class="data dib">
             <div class="symbol1">-</div>
-            <div class="num">50</div>
+            <num-animation :num=50 />
             <div class="symbol2">
               <b class="arrow-down dib"></b>
               <b class="percentage">%</b>
@@ -184,7 +183,7 @@
     </div>
 
     <!-- 服务流程 -->
-    <div class="process pre">
+    <div class="process pre" id="process">
       <h4 class="title tc dib wauto2 pab">定制服务流程</h4>
       <p class="text pab wauto2">优纳科技提供产品设计、定制开发、整体方案设计与规划三大类服务，优质的业务流程</p>
       <img class="pic wauto2 pab" src="../assets/img/service-flow.png" alt="">
@@ -285,7 +284,6 @@ import ContactPopup from '@/components/ContactPopup'
 import NumAnimation from '@/components/NumAnimation'
 
 
-
 export default {
   name: 'home',
   data() {
@@ -360,10 +358,15 @@ export default {
   },
   created() { 
     this.$nextTick(() => {
-      window.addEventListener('scroll', () => {
-        let scrollTop = document.documentElement.scrollTop;
-        console.log(scrollTop);
-      }, false)
+      // 当整个服务指标模块展示出来时，变动数字
+      let ele = document.getElementById('process');
+      let top = parseInt(ele.getBoundingClientRect().top);
+      // window.addEventListener('scroll', () => {
+      //   let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
+      //   console.log(scrollTop);
+      //   if(scrollTop > top){
+      //   }
+      // }, false)
     }) 
   },
   methods: {
@@ -375,6 +378,22 @@ export default {
     },
     switchOpenState(){
       this.isOpenPopup = !this.isOpenPopup;
+    },
+    moveToArea(id){
+      let ele = document.getElementById(id);
+      let top = parseInt(ele.getBoundingClientRect().top);
+      let ch = document.body.clientHeight;
+      let ih = window.innerHeight;
+      let maxSerollTop = ch -ih;
+      let timer = setInterval(()=>{
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
+        if(scrollTop + 100 < top && scrollTop + 100 < maxSerollTop){
+            window.scrollTo(0,scrollTop+100);
+        }else{
+          window.scrollTo(0,top);
+          clearInterval(timer);
+        }
+      },20);
     }
   },
   components:{
@@ -405,6 +424,5 @@ export default {
   -webkit-transition: width 0.3s;	
   transition: width 0.3s;
 }
-
 </style>
 

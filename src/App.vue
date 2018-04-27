@@ -1,12 +1,19 @@
 <template>
   <div id="app" class="grail w100">
-    <router-view/>
+    <!-- <router-view/> -->
+    <home/>
   </div>
 </template>
 
 <script>
+import home from '@/pages/home'
+
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    home
+  }
 }
 </script>
 
