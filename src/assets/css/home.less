@@ -60,22 +60,20 @@
         transform: translate(-50%, -50%);
         width: 1.1228rem;
         height: 1.1228rem;
-        background-image: url(../img/eagle-icon.png);
         background-repeat: no-repeat;
-        background-size: 100% auto;
-        background-position: 0 0;
+        background-size: cover;
       }
       &.sn1::after{
-        background-position: 0 1px;
+        background-image: url(../img/eagle1.png);
       }
       &.sn2::after{
-        background-position: 0 -1.1958rem;
+        background-image: url(../img/eagle2.png);
       }
       &.sn3::after{
-        background-position: 0 -2.4286rem;
+        background-image: url(../img/eagle3.png);
       }
       &.sn4::after{
-        background-position: 0 -3.6784rem;
+        background-image: url(../img/eagle4.png);
       }
     }
     .btn{
@@ -90,10 +88,9 @@
       border-radius: 50%;
       background-color: #fff;
       &.ac{
-        background-image: url(../img/eagle-icon.png);
-        background-repeat: no-repeat;
-        background-size: 100% auto;
         font-size: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
         border: none;
         &::after{
           content: "";
@@ -110,24 +107,32 @@
       &:nth-of-type(1){
         top: 2.4386rem;
         left: 5.2158rem;
-        background-position: 0 1px;
+        &.ac{
+          background-image: url(../img/eagle1.png);        
+        }
       }
       &:nth-of-type(2){
         top: .5263rem;
         left: 8.0211rem;
         white-space:nowrap;
         word-wrap: normal;
-        background-position: 0 -1.1758rem;
+        &.ac{
+          background-image: url(../img/eagle1.png);        
+        }
       }
       &:nth-of-type(3){
         top: 1.9298rem;
         left: 12.5919rem;
-        background-position: 0 -2.3586rem;
+        &.ac{
+          background-image: url(../img/eagle1.png);        
+        }
       }
       &:nth-of-type(4){
         top: 6.1754rem;
         right: 2.2105rem;
-        background-position: 0 -3.6884rem;
+        &.ac{
+          background-image: url(../img/eagle1.png);        
+        }
       }
     }
     .group{
@@ -173,6 +178,7 @@
         color: #373737;
       }
       .text{
+        margin-bottom: .7018rem;
         font-size: .2807rem;
         color: #5d5d5d;
       }
@@ -239,8 +245,7 @@
 }
 
 .application{
-  height: 11.4035rem;
-  height: 14.614rem;
+  height: 10.5263rem;
   background-color: #f6f6f6;
   .title{
     top: 1.6667rem;
@@ -253,7 +258,7 @@
     color: #5d5d5d;
   }
   .pic{
-    top: 3.1rem;
+    bottom: 0;
     left: 47%;
     width: 17.3158rem;
     height: 7.7895rem;
@@ -271,8 +276,14 @@
     justify-content: center;
     border-radius: 50%;
     background-color: #fff;
+    -webkit-transform: rotateY(180deg);
     &:hover{
       font-size: .2281rem;
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+      -webkit-transition: -webkit-transform 0.3s;
+      -webkit-transition: transform 0.3s;
+      cursor: pointer;
       &::after{
         display: none;
       }

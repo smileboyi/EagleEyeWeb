@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="pagetop">
+    <!-- 联系浮动框 -->
+    <contact-frame @switchPopupShow="switchOpenState" />
+    <num-animation :num=23 />
+    <!-- 页面头部 -->
+    <div class="pagetop dn">
       <div class="box wauto">
         <img class="logo fl" src="../assets/img/logo.png" alt="logo">
         <div class="main h100 fr">
@@ -15,7 +19,8 @@
       </div>
     </div>
 
-    <swiper class="swiper" :options="swiperOption" ref="mySwiper">
+    <!-- 轮播 -->
+    <swiper class="swiper dn" :options="swiperOption" ref="mySwiper">
       <swiper-slide class="slide">
         <div class="icon wh100 pre" style="background-image:url(./static/img/swiper-pic.jpg)">
           <div class="title icon centre1" style="background-image:url(./static/img/swiper-text.png)"></div>
@@ -35,79 +40,37 @@
     </swiper>
 
 
-    <contact-frame />
-
-
+    <!-- 鹰 -->
     <div class="introduce pre" id="solveplan">
       <div class="left pre">
         <img class="line wh100" src="../assets/img/line.png" alt="">
-        <a class="btn ac" href="javascript:;">巨鹰</a>
-        <a class="btn ac" href="javascript:;">赤腹鹰</a>
-        <a class="btn ac" href="javascript:;">苍鹰</a>
-        <a class="btn ac" href="javascript:;">雀鹰</a>
-        <div class="pab main sn4">
-          <img class="circular" src="../assets/img/circular.png" alt="">
+        <a class="btn ac" href="javascript:;" data-index="0" @click="switchEagle">巨鹰</a>
+        <a class="btn" href="javascript:;" data-index="1" @click="switchEagle">赤腹鹰</a>
+        <a class="btn" href="javascript:;" data-index="2" @click="switchEagle">苍鹰</a>
+        <a class="btn" href="javascript:;" data-index="3" @click="switchEagle">雀鹰</a>
+        <div :class="`pab main ${eagle.sn}`" id="circularbox">
+          <img class="circular wh100" src="../assets/img/circular.png" alt="">
           <div class="grail pab group">
-            <p class="name fe">雀鹰</p>
+            <p class="name fe">{{eagle.name}}</p>
             <i class="separate"></i>
-            <p class="title fe">大数据分析</p>
+            <p class="title fe">{{eagle.title}}</p>
           </div>
         </div>
       </div>
       <div class="right pab">
-        <div class="item sn1 dn">
-          <h4 class="title">大数据分析</h4>
-          <p class="text">
-            既能实现OA系统内部各模块间的数据整合，如借款与报销、预算与
-            决算等，也能实现OA系统与其他业务系统间的数据整合，如ERP、
-            CRM、HR、档案系统、财务系统等，帮助企业消除信息孤岛，实现
-            数据的互享互通。
-          </p>
+        <div :class="`item ${eagle.sn}`">
+          <h4 class="title">{{eagle.title}}</h4>
+          <p class="text">{{eagle.text}}</p>
           <div class="phrases">
-            <p class="phrase sn1">灵便的实现数据整合和数据统计，消除信息孤岛</p>
-            <p class="phrase sn2">OA系统内部工作流之间的数据整合</p>
-            <p class="phrase sn3">实现OA系统工作流与其他业务系统之间的数据整合</p>
-          </div>
-        </div>
-        <div class="item sn2 dn">
-          <h4 class="title">以管理层为中心</h4>
-          <p class="text">
-            支持不同权限的各类型用户是智慧办公的特点。与传统割裂平台不同，系统提供统一的支撑界面，登录同一平台，按职级提供不同功能。
-            并提供该角色归属的所有企业运营信息、事务、提醒信息，方便老板们快速进行处理。
-          </p>
-          <div class="phrases">
-            <p class="phrase sn1">企业核心数据一键生成</p>
-            <p class="phrase sn2">透视全公司各层级</p>
-            <p class="phrase sn3">人才鉴别与培养</p>
-          </div>
-        </div>
-        <div class="item sn3 dn">
-          <h4 class="title">轻量化前端渠道</h4>
-          <p class="text">
-            对各渠道独立的多个运营管理功能及界面进行横向整合，形成统一的运营管理工作台。
-            运营人员可在该平台上对内容、系统参数等信息进行统一配置管理或按流程开展日常运营操作，提升运营效率。
-          </p>
-          <div class="phrases">
-            <p class="phrase sn1">支持移动建模，满足企业个性化的移动应用</p>
-            <p class="phrase sn2">APP手机端,web移动端,Pad移动端,微信集成，多端同步</p>
-            <p class="phrase sn3">统一运营管理工作台，同步内容、系统参数等信息</p>
-          </div>
-        </div>
-        <div class="item sn4">
-          <h4 class="title">即时消息处理</h4>
-          <p class="text">
-            可通过内置的便捷线上沟通工具进行即时消息回复，进行有效的沟通。消息发出“已读或未读”一目了然。
-            “业务往来”和“工作往来”的集成展示在沟通中也能随时掌握信息、处理待办事项。
-          </p>
-          <div class="phrases">
-            <p class="phrase sn1">企业组织架构生成通讯录，快速查找联系人</p>
-            <p class="phrase sn2">“已读或未读”一目了然，消息100%传达</p>
-            <p class="phrase sn3">一键分享，审批流程轻松查看，加快审批进度</p>
+            <p class="phrase sn1">{{eagle.list[0]}}</p>
+            <p class="phrase sn2">{{eagle.list[1]}}</p>
+            <p class="phrase sn3">{{eagle.list[2]}}</p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- 应用 -->
     <div class="application pre" id="service">
       <h4 class="title tc dib wauto2 pab">多款协同应用供您选择</h4>
       <p class="text pab wauto2">不同类型的企业可以选择自己需要的办公应用，拒绝功能堆砌、资源闲置</p>
@@ -161,6 +124,8 @@
         </div>
       </div>
     </div>
+
+    <!-- 服务指标 -->
     <div class="quota pre">
       <h4 class="title tc dib wauto2 pab">优纳科技帮助企业实现信息化管理</h4>
       <p class="text pab wauto2">大数据助力，实现高价值管理</p>
@@ -217,11 +182,15 @@
         </div>
       </div>
     </div>
+
+    <!-- 服务流程 -->
     <div class="process pre">
       <h4 class="title tc dib wauto2 pab">定制服务流程</h4>
       <p class="text pab wauto2">优纳科技提供产品设计、定制开发、整体方案设计与规划三大类服务，优质的业务流程</p>
       <img class="pic wauto2 pab" src="../assets/img/service-flow.png" alt="">
     </div>
+
+    <!-- 服务标准 -->
     <div class="standard pre" id="standard">
       <h4 class="title tc dib wauto2 pab">服务标准</h4>
       <p class="text pab wauto2">根据各类业务，优纳科技提供标准化的工作流程，有效机制保障项目整体质量</p>
@@ -253,14 +222,19 @@
       </div>
     </div>
 
+    <!-- 发展历程 -->
     <div class="levelopment pre" id="levelopment">
       <h4 class="title tc dib wauto2 pab">发展历程</h4>
       <img class="pic wauto2 pab" src="../assets/img/development-history.png" alt="">
     </div>
+
+    <!-- 合作企业 -->
     <div class="enterprise pre" id="enterprise">
       <h4 class="title tc dib wauto2 pab">创业路上，相伴企业成长</h4>
       <img class="pic wauto2 pab" src="../assets/img/brand-show.png" alt="">
     </div>
+
+    <!-- 页面底部 -->
     <div class="pagebottm pre" id="pagebottm">
       <div class="pic pre wauto fix">
         <img class="logo fl" src="../assets/img/logo.png" alt="logo">
@@ -296,6 +270,10 @@
         </div>
       </div>
     </div>
+
+    <!-- 联系我们 -->
+    <contact-popup v-show="isOpenPopup" @switchPopupShow="switchOpenState" />
+    
   </div>
 </template>
 
@@ -303,12 +281,16 @@
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import ContactFrame from '@/components/ContactFrame'
+import ContactPopup from '@/components/ContactPopup'
+import NumAnimation from '@/components/NumAnimation'
+
 
 
 export default {
   name: 'home',
   data() {
     return {
+      isOpenPopup: false,
       swiperOption: {
         notNextTick: true,
         autoplay: 3000,
@@ -316,7 +298,64 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         }
-      }
+      },
+      eagles:[
+        {
+          sn: 'sn1',
+          name: '巨鹰',
+          title: '大数据分析',
+          text: '既能实现OA系统内部各模块间的数据整合，如借款与报销、预算与决算等，也能实现OA系统与其他业务系统间的数据整合，如ERP、CRM、HR、档案系统、财务系统等，帮助企业消除信息孤岛，实现数据的互享互通。',
+          list:[
+            '灵便的实现数据整合和数据统计，消除信息孤岛',
+            'OA系统内部工作流之间的数据整合',
+            '实现OA系统工作流与其他业务系统之间的数据整合'
+          ]
+        },
+        {
+          sn: 'sn2',
+          name: '赤腹鹰',
+          title: '以管理层为中心',
+          text: '既能实现OA系统内部各模块间的数据整合，如借款与报销、预算与决算等，也能实现OA系统与其他业务系统间的数据整合，如ERP、CRM、HR、档案系统、财务系统等，帮助企业消除信息孤岛，实现数据的互享互通。',
+          list:[
+            '企业核心数据一键生成',
+            '透视全公司各层级',
+            '人才鉴别与培养'
+          ]
+        },
+        {
+          sn: 'sn3',
+          name: '苍鹰',
+          title: '轻量化前端渠道',
+          text: '对各渠道独立的多个运营管理功能及界面进行横向整合，形成统一的运营管理工作台。运营人员可在该平台上对内容、系统参数等信息进行统一配置管理或按流程开展日常运营操作，提升运营效率。',
+          list:[
+            '支持移动建模，满足企业个性化的移动应用',
+            'APP手机端,web移动端,Pad移动端,微信集成，多端同步',
+            '统一运营管理工作台，同步内容、系统参数等信息'
+          ]
+        },
+        {
+          sn: 'sn4',
+          name: '雀鹰',
+          title: '即时消息处理',
+          text: '可通过内置的便捷线上沟通工具进行即时消息回复，进行有效的沟通。消息发出“已读或未读”一目了然。“业务往来”和“工作往来”的集成展示在沟通中也能随时掌握信息、处理待办事项。',
+          list:[
+            '企业组织架构生成通讯录，快速查找联系人',
+            '“已读或未读”一目了然，消息100%传达',
+            '一键分享，审批流程轻松查看，加快审批进度'
+          ]
+        }
+      ],
+      eagle: {
+        sn: 'sn1',
+        name: '巨鹰',
+        title: '大数据分析',
+        text: '既能实现OA系统内部各模块间的数据整合，如借款与报销、预算与决算等，也能实现OA系统与其他业务系统间的数据整合，如ERP、CRM、HR、档案系统、财务系统等，帮助企业消除信息孤岛，实现数据的互享互通。',
+        list:[
+          '灵便的实现数据整合和数据统计，消除信息孤岛',
+          'OA系统内部工作流之间的数据整合',
+          '实现OA系统工作流与其他业务系统之间的数据整合'
+        ]
+      },
     }
   },
   created() { 
@@ -327,12 +366,24 @@ export default {
       }, false)
     }) 
   },
+  methods: {
+    switchEagle(e){
+      document.querySelectorAll("#solveplan .left .ac")[0].className = "btn";
+      e.target.className = "btn ac";
+      let index = parseInt(e.target.getAttribute("data-index"));
+      this.eagle = this.eagles[index];
+    },
+    switchOpenState(){
+      this.isOpenPopup = !this.isOpenPopup;
+    }
+  },
   components:{
     swiper,
     swiperSlide,
-    ContactFrame
+    ContactFrame,
+    ContactPopup,
+    NumAnimation
   }
-
 }
 </script>
 <style src="../assets/css/home.less" lang="less" scoped />
@@ -349,6 +400,8 @@ export default {
   width: 25px;
   border-radius: 3px !important;
   background-color: #c9cbd2 !important;
+  -webkit-transform-origin:0 4px;
+  transform-origin:0 4px;
   -webkit-transition: width 0.3s;	
   transition: width 0.3s;
 }
