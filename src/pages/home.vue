@@ -156,7 +156,7 @@
 
         <div class="item">
           <div class="data dib">
-            <div class="symbol1">+</div>
+            <div class="symbol1 sn3">+</div>
             <num-animation :num=300 />
             <div class="symbol2">
               <b class="arrow-up dib"></b>
@@ -289,6 +289,7 @@ export default {
   data() {
     return {
       isOpenPopup: false,
+      ischange: false,
       swiperOption: {
         notNextTick: true,
         autoplay: 3000,
@@ -359,17 +360,63 @@ export default {
   created() { 
     this.$nextTick(() => {
       // 当整个服务指标模块展示出来时，变动数字
-      let ele = document.getElementById('process');
+      let ele = document.getElementById('quota');
       let top = parseInt(ele.getBoundingClientRect().top);
-      // window.addEventListener('scroll', () => {
-      //   let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
-      //   console.log(scrollTop);
-      //   if(scrollTop > top){
-      //   }
-      // }, false)
-    }) 
+      let onumbox = document.querySelectorAll('.num-box');
+      let onums = document.querySelectorAll('.num-box .nums');
+      window.addEventListener('scroll', this.throttle(() => {
+        if(this.ischange) return;
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
+        if(scrollTop > top-200){
+          // 开始动画
+          for(let item of onums){
+            item.className = "nums fe";
+          }
+          // 3秒后变换内容
+          for(let item of onumbox){
+            let _t = setTimeout(() => {
+              let num = item.getAttribute('data-num');
+              item.innerHTML = num;
+              clearTimeout(_t);
+            },3000)
+          }
+        }
+      }, false),50)
+    })
   },
   methods: {
+    // 节流函数：https://blog.csdn.net/ligang2585116/article/details/75003436
+    throttle(func, wait, options) {
+      let context, args, result;
+      let timeout = null;
+      let previous = 0;
+      if (!options) options = {};
+      let later = function() {
+        previous = options.leading === false ? 0 : new Date().getTime();
+        timeout = null;
+        result = func.apply(context, args);
+        if (!timeout) context = args = null;
+      };
+      return function() {
+        let now = new Date().getTime();
+        if (!previous && options.leading === false) previous = now;
+        let remaining = wait - (now - previous);
+        context = this;
+        args = arguments;
+        if (remaining <= 0 || remaining > wait) {
+          if (timeout) {
+            clearTimeout(timeout);
+            timeout = null;
+          }
+          previous = now;
+          result = func.apply(context, args);
+          if (!timeout) context = args = null;
+        } else if (!timeout && options.trailing !== false) {
+          timeout = setTimeout(later, remaining);
+        }
+        return result;
+      };
+    },
     switchEagle(e){
       document.querySelectorAll("#solveplan .left .ac")[0].className = "btn";
       e.target.className = "btn ac";

@@ -1,8 +1,8 @@
 <template>
-  <div id="app" class="grail w100">
-    <!-- <router-view/> -->
-    <home/>
-  </div>
+  <!-- <div id="app" class="grail w100">
+    <router-view/>
+  </div> -->
+  <home id="app"/>
 </template>
 
 <script>

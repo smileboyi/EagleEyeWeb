@@ -1,5 +1,5 @@
 <template>
-  <div class="num-box flex ovh" :id="`num${num}`"></div>
+  <div class="num-box flex ovh" :id="`num${num}`"  :data-num="`${this.num}`"></div>
 </template>
 <script>
 export default {
