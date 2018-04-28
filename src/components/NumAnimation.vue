@@ -46,8 +46,6 @@ export default {
       }
     }
     .num{
-      // height: 1rem;
-      // line-height: 1rem;
       font-size: 1.4035rem;
     }
   }

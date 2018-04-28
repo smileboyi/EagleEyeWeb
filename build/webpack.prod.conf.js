@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 const env = require('../config/prod.env')
 
@@ -115,7 +116,22 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    //配置 prerender-spa-plugin
+    new PrerenderSpaPlugin(
+      // 生成文件的路径，此处与webpack打包地址一致
+      path.join(config.build.assetsRoot), //config.build.assetsRoot为vue cli生成的配置，打包后的文件地址
+      // 配置要做预渲染的路由，只支持h5 history方式
+      [ '/'],
+      {
+        //在一定时间后再捕获页面信息，使得页面数据信息加载完成
+        captureAfterTime: 50000,
+        //忽略打包错误
+        ignoreJSErrors: true,
+        phantomOptions: '--web-security=false',
+        maxAttempts: 10,
+      }
+    )
   ]
 })
 
