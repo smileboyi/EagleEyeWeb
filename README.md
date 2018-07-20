@@ -1,6 +1,6 @@
 # eagle-eye-web
 
-> 鹰眼官网我前端开发
+> 鹰眼官网前端开发
 
 ## Build Setup
 
