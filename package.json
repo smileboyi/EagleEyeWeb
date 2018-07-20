@@ -1,7 +1,7 @@
 {
   "name": "eagle-eye-web",
   "version": "1.0.0",
-  "description": "鹰眼官网我前端开发",
+  "description": "鹰眼官网前端开发",
   "author": "smileboyi <15215212143@163.com>",
   "private": true,
   "scripts": {
